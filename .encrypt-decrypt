@@ -1,0 +1,93 @@
+# ENCRYPT
+
+# encrypts file, takes [ input pathway, output pathway ]
+# Usage: encrypt /Users/you/file/path/fileName.txt /Users/you/file/path/encryptedFileName.txt
+
+encrypt() {
+  # VARIABLES
+  INPUT_FILE=$1
+  OUTPUT_FILE=$2
+
+  # FIRST CHECK IF FILE EXISTS AT PATH
+  if [[ ! -a ${INPUT_FILE} ]]; then
+    printf "\n${RED}File does not exist at:${NC} $INPUT_FILE"
+    zshexit() { echo trap; sleep 1; }
+  else
+    echo ''
+  fi
+
+  # CHECK IF VARIABLES ARE CORRECT
+  printf "\n${CYAN}Output (encrypted file) Pathway:${NC} $OUTPUT_FILE"
+  printf "\n${YELLOW}Is this ${CYAN}path/filename${YELLOW} correct? ${GREY}[y/n]: "
+  read -E -s -k 1 "ans"
+  if [ "$ans" != "y" ]
+    then
+      printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not encrypted, exiting script...\n\n"
+      # read -t 2
+      zshexit() { echo trap; sleep 1; }
+    else
+      echo ""
+  fi
+
+  # Encrypt file
+  openssl enc -aes-256-cbc -e -in $INPUT_FILE -out $OUTPUT_FILE
+  output=$_
+  outname=$(basename ${output})
+  outpath=$(dirname ${output})
+
+  # Success/fail message
+  if [ -z "$output" ]
+  then
+    echo "\n${RED}File not encrypted, exiting script...\n\n${NC}"
+  else
+    echo "\n${CYAN}File ${NC}$outname\n${CYAN}encrypted successfully in directory: ${NC}$outpath"
+    echo "\nOpening directory..."
+    open $outpath
+  fi
+}
+
+# DECRYPT
+
+# decrypts file, takes [ input pathway, output pathway ]
+# Usage: decrypt /Users/you/file/path/encryptedFileName.txt /Users/you/file/path/decryptedFileName.txt
+
+decrypt() {
+  # VARIABLES
+  INPUT_FILE=$1
+  OUTPUT_FILE=$2
+
+  # FIRST CHECK IF FILE EXISTS AT PATH
+  if [[ ! -a ${INPUT_FILE} ]]; then
+    printf "\n${RED}File does not exist at:${NC} $INPUT_FILE"
+    zshexit() { echo trap; sleep 1; }
+  fi
+
+  # CHECK IF VARIABLES ARE CORRECT
+  printf "\n${CYAN}Output (decrypted file) Pathway:${NC} $OUTPUT_FILE"
+  printf "\n${YELLOW}Is this ${CYAN}path/filename${YELLOW} correct? ${GREY}[y/n]: "
+  read -E -s -k 1 "ans"
+  if [ "$ans" != "y" ]
+    then
+      printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not decrypted, exiting script...\n\n"
+      # read -t 2
+      zshexit() { echo trap; sleep 1; }
+    else
+      echo ""
+  fi
+
+  # Decrypt file
+  openssl enc -aes-256-cbc -d -in $INPUT_FILE -out $OUTPUT_FILE
+  output=$_
+  outname=$(basename ${output})
+  outpath=$(dirname ${output})
+
+  # Success/fail message
+  if [ -z "$output" ]
+  then
+    echo "\n${RED}File not decrypted, exiting script...\n\n${NC}"
+  else
+    echo "\n${CYAN}File ${NC}$outname\n${CYAN}decrypted successfully in directory: ${NC}$outpath"
+    echo "\nOpening directory..."
+    open $outpath
+  fi
+}
