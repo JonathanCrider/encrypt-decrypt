@@ -10,7 +10,7 @@ There are two ways to use this code, I prefer the first.
 
 ### Option 1
 
-Save this file in your root directory and paste the following into your `.zshrc` file
+Save the `.encrypt-decrypt` file in your root directory and paste the following into your `.zshrc` file
 
 ```bash
 # Import encrypt/decrypt functions from ~/.encrypt-decrypt
@@ -21,7 +21,7 @@ fi
 
 ### Option 2
 
-Copy/paste the code into your `.zshrc` file (or equivalent, i.e. `.bashrc`)
+Copy/paste the code into your `.zshrc` file
 
 ## Usage
 
