@@ -39,11 +39,11 @@ They both take 2 arguments:
 ### Examples
 
 ```bash
-encrypt ./originalfile.txt ./encryptedfile.txt
+encrypt ~/path/to/originalfile.txt ~/path/to/encryptedfile.txt
 ```
 
 ```bash
-decrypt ./encryptedfile.txt ./decryptedfile.txt
+decrypt ~/path/to/encryptedfile.txt ~/path/to/decryptedfile.txt
 ```
 
 ## Notes
