@@ -9,7 +9,7 @@ SCRIPT_URL="https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/mai
 mkdir -p "$TARGET_DIR"
 
 # Check if the script already exists
-if [ -f "$SCRIPT_PATH" ]
+if [[ -f "$SCRIPT_PATH" ]]
   then
     echo "update"
     echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
@@ -39,9 +39,9 @@ fi
 SHELL_CONFIG="$HOME/.zshrc"
 SOURCE_CMD="source $SCRIPT_PATH"
 
-if [[ ! grep -q "$SOURCE_CMD" "$SHELL_CONFIG" ]]
+if ! grep -qF -- "$SOURCE_CMD" "$SHELL_CONFIG"
   then
-    echo "\n# Source encrypt/decrypt functions\n$SOURCE_CMD" >> "$SHELL_CONFIG"
+    echo -e "\n# Source encrypt/decrypt functions\n$SOURCE_CMD" >> "$SHELL_CONFIG"
     echo "Added '$SOURCE_CMD' to $SHELL_CONFIG."
 fi
 
