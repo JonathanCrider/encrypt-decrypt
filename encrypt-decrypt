@@ -58,7 +58,7 @@ encrypt() {
   printf "\n${CYAN}Output (encrypted file) Pathway:${NC} $OUTPUT_FILE"
   printf "\n${YELLOW}Is this ${CYAN}path/filename${YELLOW} correct? ${GREY}[y/n]: "
   read -E -s -k 1 "ans"
-  if [ "$ans" != "y" ]
+  if [[ "$ans" != "y" ]]
     then
       printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not encrypted, exiting script...\n\n"
       # read -t 2
@@ -108,7 +108,7 @@ decrypt() {
   printf "\n${CYAN}Output (decrypted file) Pathway:${NC} $OUTPUT_FILE"
   printf "\n${YELLOW}Is this ${CYAN}path/filename${YELLOW} correct? ${GREY}[y/n]: "
   read -E -s -k 1 "ans"
-  if [ "$ans" != "y" ]
+  if [[ "$ans" != "y" ]]
     then
       printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not decrypted, exiting script...\n\n"
       # read -t 2
