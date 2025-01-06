@@ -26,7 +26,7 @@ fi
 # Download source file and give relevant permissions
 echo "downloading script $SCRIPT_NAME"
 
-if [[ curl -o "$SCRIPT_PATH" -sSl "$SCRIPT_URL" ]]
+if [[ curl -o "$SCRIPT_PATH" "$SCRIPT_URL" ]]
   then
     chmod +x "$SCRIPT_PATH"
     echo "Downloaded and installed '$SCRIPT_NAME' into '$SCRIPT_PATH'"
