@@ -10,6 +10,26 @@ There are two ways to use/install this code. Certainly feel free to modify to yo
 
 ### Option 1
 
+Run the following command in your terminal to install the functions and create sourcing in your `.zshrc` file:
+
+```zsh
+curl -sSL https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/main/install.sh | zsh
+```
+
+After installation, be sure to open a new terminal or refresh your `.zshrc` using the following command:
+
+```zsh
+source ~/.zshrc
+```
+
+Pro tip: add an alias (shortcut) for refreshing your terminal:
+
+```zsh
+echo "\n# ALIAS to refresh terminal\nalias refresh='source ~/.zshrc'" >> ~/.zshrc
+```
+
+### Option 2
+
 Save the `.encrypt-decrypt` file in your root directory and paste the following into your `.zshrc` file
 
 ```bash
@@ -19,7 +39,7 @@ if [ -f $HOME/.zsh_custom_code ]; then
 fi
 ```
 
-### Option 2
+### Option 3
 
 Copy/paste the code into your `.zshrc` file
 
