@@ -13,14 +13,13 @@ if [[ -f "$SCRIPT_PATH" ]]
   then
     echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
     echo "Do you want to overwrite it? [y/N]: "
-    read -E -s -k 1 "response"
+    read -r "response"
     if [[ "$response" != "y" && "$response" != "Y" ]]
       then
         echo "Installation canceled."
         exit 0
-      else
-        rm -rf $SCRIPT_PATH
     fi
+    rm $SCRIPT_PATH
 fi
 
 # Download source file and give relevant permissions
