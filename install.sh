@@ -41,7 +41,7 @@ fi
 SHELL_CONFIG="$HOME/.zshrc"
 SOURCE_CMD="source $SCRIPT_PATH"
 
-if ! grep -qF "$SOURCE_CMD" "$SHELL_CONFIG"
+if ! grep -q "$SOURCE_CMD" "$SHELL_CONFIG"
   then
     echo "\n# Source encrypt/decrypt functions\n$SOURCE_CMD" >> "$SHELL_CONFIG"
     echo "Added '$SOURCE_CMD' to $SHELL_CONFIG."
