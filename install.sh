@@ -26,12 +26,12 @@ fi
 # Download source file and give relevant permissions
 echo "downloading script $SCRIPT_NAME"
 
-if curl -o "$SCRIPT_PATH" "$SCRIPT_URL"
+if curl -sSL "$SCRIPT_URL" -o "$SCRIPT_PATH"
   then
     chmod +x "$SCRIPT_PATH"
     echo "Downloaded and installed '$SCRIPT_NAME' into '$SCRIPT_PATH'"
   else
-    echo "Failed to download '$SCRIPT_NAME'. Please check your internet connection or the URL"
+    echo "Failed to download '$SCRIPT_NAME'. Please check your internet connection or the URL."
     exit 1
 fi
 
