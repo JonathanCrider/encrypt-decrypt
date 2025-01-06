@@ -1,12 +1,12 @@
 # Encrypt and Decrypt tool for command line
 
-Adds a quick way to encrypt and decrypt a file using openssl aes-256-cbc
+Adds a quick, simple way to encrypt and decrypt a file using openssl aes-256-cbc with PBKDFT and a salt. Relatively secure way to share a sensitive file with a password, so long as you follow password and other security best practices.
 
 Do note, this was written on MacOS running zsh, so you may need to modify the code to run in your specific environment
 
 ## Installation
 
-There are two ways to use this code, I prefer the first.
+There are two ways to use/install this code. Certainly feel free to modify to your own personal taste.
 
 ### Option 1
 
@@ -39,13 +39,17 @@ They both take 2 arguments:
 ### Examples
 
 ```bash
+# any directory
 encrypt ~/path/to/originalfile.txt ~/path/to/encryptedfile.txt
+
+# same directory
+encrypt test.txt test-encrypted.txt
 ```
 
 ```bash
+# any directory
 decrypt ~/path/to/encryptedfile.txt ~/path/to/decryptedfile.txt
+
+# same directory
+decrypt test-encrypted.txt test-decrypted.txt
 ```
-
-## Notes
-
-You will be prompted for a password, but no character indication will appear in the terminal as you type. This is normal, but be sure to type it correctly!

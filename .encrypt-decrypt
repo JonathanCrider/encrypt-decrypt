@@ -8,18 +8,31 @@ CYAN='\033[0;36m'
 GREY='\033[0;37m'
 YELLOW='\033[1;33m'
 
-# Encryption algo (array for extra args)
-ENCRYPTION=(-aes-256-cbc -pbkdf2 -salt)
+# Encryption algo (array to treat each arg separately in the command)
+ENCRYPTION=(-aes-256-cbc -pbkdf2 -iter 100000 -salt)
 
-# Check for OpenSSL
-hasNecessaryPrograms() {
+# check for required program(s) and environment
+hasRequirements() {
   # return 0 === true
   openssl=$(openssl version)
+  echo $openssl
+
+  zsh=$ZSH_VERSION
+  echo "ZSH $zsh"
+
   if [[ ! $openssl ]]
     then
-      printf "\nplease install openssl, then try again"
+      printf "\nplease install openssl, then try again\n"
       return 1 # Return non-zero integer to indicate fail (0 is successful in bash/zsh, any other number is failure)
   fi
+
+  if [[ ! $zsh ]]
+    then
+      printf "\nplease switch to ZSH shell, then try again\n"
+      return 1
+  fi
+
+  echo "Requirements met, continuing...\n"
 }
 
 ## ENCRYPT ##
@@ -33,7 +46,7 @@ encrypt() {
   INPUT_FILE=$1
   OUTPUT_FILE=$2
 
-  hasNecessaryPrograms || return 1
+  hasRequirements || return 1
 
   # FIRST CHECK IF FILE EXISTS AT PATH
   if [[ ! -a ${INPUT_FILE} ]]; then
@@ -85,7 +98,7 @@ decrypt() {
   INPUT_FILE=$1
   OUTPUT_FILE=$2
 
-  hasNecessaryPrograms || return 1
+  hasRequirements || return 1
   
   # FIRST CHECK IF FILE EXISTS AT PATH
   if [[ ! -a ${INPUT_FILE} ]]; then
