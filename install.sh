@@ -8,20 +8,6 @@ SCRIPT_URL="https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/mai
 # Create directory if it doesn't exist
 mkdir -p "$TARGET_DIR"
 
-# Check if the script already exists
-if [ -f "$SCRIPT_PATH" ]
-  then
-    echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
-    echo "Do you want to overwrite it? [y/N]: "
-    read -E -s -k 1 "ans"
-    if [[ "$ans" != "y" && "$response" != "Y" ]]
-      then
-        echo "Installation canceled."
-        exit 0
-    fi
-    rm $SCRIPT_PATH
-fi
-
 # Download source file and give relevant permissions
 echo "downloading script $SCRIPT_NAME"
 
