@@ -52,8 +52,6 @@ encrypt() {
   if [[ ! -a ${INPUT_FILE} ]]; then
     printf "\n${RED}File does not exist at:${NC} $INPUT_FILE"
     return 1
-  else
-    echo ''
   fi
 
   # CHECK IF VARIABLES ARE CORRECT
@@ -65,8 +63,6 @@ encrypt() {
       printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not encrypted, exiting script...\n\n"
       # read -t 2
       return 1
-    else
-      echo ""
   fi
 
   # Encrypt file
@@ -115,8 +111,6 @@ decrypt() {
       printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not decrypted, exiting script...\n\n"
       # read -t 2
       return 1
-    else
-      echo ""
   fi
 
   # Decrypt file
