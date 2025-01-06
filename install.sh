@@ -9,12 +9,7 @@ SCRIPT_URL="https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/mai
 mkdir -p "$TARGET_DIR"
 
 # Check if the script already exists
-if [[ -f "$SCRIPT_PATH" ]]
-  then
-    echo $TARGET_DIR
-    echo $SCRIPT_NAME
-    echo $SCRIPT_PATH
-    echo $SCRIPT_URL
+# if [[ -f "$SCRIPT_PATH" ]]
   # then
   #   echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
   #   echo "Do you want to overwrite it? [y/N]: "
@@ -25,7 +20,7 @@ if [[ -f "$SCRIPT_PATH" ]]
   #       exit 0
   #   fi
   #   rm $SCRIPT_PATH
-fi
+# fi
 
 # Download source file and give relevant permissions
 echo "downloading script $SCRIPT_NAME"
