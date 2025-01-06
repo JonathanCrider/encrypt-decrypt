@@ -10,16 +10,20 @@ mkdir -p "$TARGET_DIR"
 
 # Check if the script already exists
 if [[ -f "$SCRIPT_PATH" ]]
-  then
-    echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
-    echo "Do you want to overwrite it? [y/N]: "
-    read -r "response"
-    if [[ "$response" != "y" && "$response" != "Y" ]]
-      then
-        echo "Installation canceled."
-        exit 0
-    fi
-    rm $SCRIPT_PATH
+echo $TARGET_DIR
+echo $SCRIPT_NAME
+echo $SCRIPT_PATH
+echo $SCRIPT_URL
+  # then
+  #   echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
+  #   echo "Do you want to overwrite it? [y/N]: "
+  #   read -r "response"
+  #   if [[ "$response" != "y" && "$response" != "Y" ]]
+  #     then
+  #       echo "Installation canceled."
+  #       exit 0
+  #   fi
+  #   rm $SCRIPT_PATH
 fi
 
 # Download source file and give relevant permissions
