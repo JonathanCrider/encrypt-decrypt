@@ -13,7 +13,7 @@ if [[ -f "$SCRIPT_PATH" ]]
   then
     echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
     echo "Do you want to overwrite it? [y/N]: "
-    read -r response
+    read -E -s -k 1 response
     if [[ "$response" != "y" && "$response" != "Y" ]]
       then
         echo "Installation canceled."
