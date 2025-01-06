@@ -66,10 +66,12 @@ encrypt() {
   fi
 
   # Encrypt file
+  echo /n
   openssl enc ${ENCRYPTION[@]} -e -in $INPUT_FILE -out $OUTPUT_FILE
+  output=$?
   
   # Fail
-  if [[ $? -ne 0 ]]
+  if [[ output -ne 0 ]]
     then
       echo "\n${RED}File not encrypted, exiting script...\n\n${NC}"
       return 1
@@ -80,7 +82,7 @@ encrypt() {
   outpath=$(dirname ${output})
   echo "\n${CYAN}File ${NC}$outname\n${CYAN}encrypted successfully in directory: ${NC}$outpath"
   echo "\nOpening directory..."
-  open $outpath
+  open $outpath &>/dev/null
 }
 
 ## DECRYPT ##
@@ -114,10 +116,12 @@ decrypt() {
   fi
 
   # Decrypt file
+  echo \n
   openssl enc ${ENCRYPTION[@]} -d -in $INPUT_FILE -out $OUTPUT_FILE
+  output=$?
   
   # Fail
-  if [[ $? -ne 0 ]]
+  if [[ output -ne 0 ]]
     then
       echo "\n${RED}File not encrypted, exiting script...\n\n${NC}"
       return 1
@@ -128,5 +132,5 @@ decrypt() {
   outpath=$(dirname ${output})
   echo "\n${CYAN}File ${NC}$outname\n${CYAN}decrypted successfully in directory: ${NC}$outpath"
   echo "\nOpening directory..."
-  open $outpath
+  open $outpath &>/dev/null
 }
