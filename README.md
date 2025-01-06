@@ -34,7 +34,7 @@ Save the `.encrypt-decrypt` file in your root directory and paste the following 
 
 ```bash
 # Import encrypt/decrypt functions from ~/.encrypt-decrypt
-if [ -f $HOME/.zsh_custom_code ]; then
+if [ -f $HOME/.encrypt-decrypt ]; then
     source $HOME/.encrypt-decrypt
 fi
 ```
