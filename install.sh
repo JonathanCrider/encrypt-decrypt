@@ -10,10 +10,11 @@ mkdir -p "$TARGET_DIR"
 
 # Check if the script already exists
 if [[ -f "$SCRIPT_PATH" ]]
-  echo $TARGET_DIR
-  echo $SCRIPT_NAME
-  echo $SCRIPT_PATH
-  echo $SCRIPT_URL
+  then
+    echo $TARGET_DIR
+    echo $SCRIPT_NAME
+    echo $SCRIPT_PATH
+    echo $SCRIPT_URL
   # then
   #   echo "The script '$SCRIPT_NAME' already exists in $TARGET_DIR."
   #   echo "Do you want to overwrite it? [y/N]: "
