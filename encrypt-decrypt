@@ -63,10 +63,10 @@ encrypt() {
       printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not encrypted, exiting script...\n\n"
       # read -t 2
       return 1
+    else echo '' # puts next section on a new line
   fi
 
   # Encrypt file
-  echo \n
   openssl enc ${ENCRYPTION[@]} -e -in $INPUT_FILE -out $OUTPUT_FILE
   output=$?
   
@@ -113,10 +113,10 @@ decrypt() {
       printf "\n\n${CYAN}**Please try again with correct filepaths**\n\n${RED}File not decrypted, exiting script...\n\n"
       # read -t 2
       return 1
+    else echo '' # puts next section on a new line
   fi
 
   # Decrypt file
-  echo \n
   openssl enc ${ENCRYPTION[@]} -d -in $INPUT_FILE -out $OUTPUT_FILE
   output=$?
   
