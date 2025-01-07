@@ -58,3 +58,11 @@ decrypt ~/path/to/encryptedfile.txt ~/path/to/decryptedfile.txt
 # same directory
 decrypt test-encrypted.txt test-decrypted.txt
 ```
+
+## Uninstall
+
+Run the following command to uninstall the script:
+
+```zsh
+curl -sSL https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/main/uninstall.sh | zsh
+```
