@@ -79,7 +79,7 @@ encrypt() {
 
   # Success
   outpath=$(dirname ${output})
-  if [[ "$outpath" = "."]]
+  if [[ "$outpath" == "."]]
     then
       outpath=$PWD
   fi
@@ -132,7 +132,7 @@ decrypt() {
 
    # Success
   outpath=$(dirname ${output})
-  if [[ "$outpath" = "."]]
+  if [[ "$outpath" == "."]]
     then
       outpath=$PWD
   fi
