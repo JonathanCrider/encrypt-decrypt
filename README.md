@@ -6,11 +6,9 @@ Do note, this was written on MacOS running zsh, so you may need to modify the co
 
 ## Installation
 
-There are two ways to use/install this code. Certainly feel free to modify to your own personal taste.
-
-### Option 1
-
 Run the following command in your terminal to install the functions and create sourcing in your `.zshrc` file:
+
+Feel free to check the `install.sh` file before you use this.
 
 ```zsh
 curl -sSL https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/main/install.sh | zsh
@@ -22,26 +20,13 @@ After installation, be sure to open a new terminal or refresh your `.zshrc` usin
 source ~/.zshrc
 ```
 
-Pro tip: add an alias (shortcut) for refreshing your terminal:
+Pro tip: add an alias (shortcut) for refreshing your terminal.
+
+Copy/paste the command below to add the alias to your `.zshrc` file. You will need to run the command above to use it the first time, or open a new terminal.
 
 ```zsh
-echo "\n# ALIAS to refresh terminal\nalias refresh='source ~/.zshrc'" >> ~/.zshrc
+echo -e "\n# ALIAS to refresh terminal\nalias refresh='source ~/.zshrc'" >> ~/.zshrc
 ```
-
-### Option 2
-
-Save the `.encrypt-decrypt` file in your root directory and paste the following into your `.zshrc` file
-
-```bash
-# Import encrypt/decrypt functions from ~/.encrypt-decrypt
-if [ -f $HOME/.encrypt-decrypt ]; then
-    source $HOME/.encrypt-decrypt
-fi
-```
-
-### Option 3
-
-Copy/paste the code into your `.zshrc` file
 
 ## Usage
 
