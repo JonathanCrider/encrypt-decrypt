@@ -80,9 +80,13 @@ encrypt() {
   # Success
   outname=$(basename ${OUTPUT_FILE})
   outpath=$(dirname ${OUTPUT_FILE})
+  if [[ "$outpath" == "." ]]
+    then
+      outpath=$PWD
+  fi
   echo "\n${CYAN}File ${NC}$outname\n${CYAN}encrypted successfully in directory: ${NC}$outpath"
   echo "\nOpening directory..."
-  open $outpath &>/dev/null
+  open "$outpath" &>/dev/null
 }
 
 ## DECRYPT ##
@@ -130,7 +134,11 @@ decrypt() {
   # Success
   outname=$(basename ${OUTPUT_FILE})
   outpath=$(dirname ${OUTPUT_FILE})
+  if [[ "$outpath" == "." ]]
+    then
+      outpath=$PWD
+  fi
   echo "\n${CYAN}File ${NC}$outname\n${CYAN}decrypted successfully in directory: ${NC}$outpath"
   echo "\nOpening directory..."
-  open $outpath &>/dev/null
+  open "$outpath" &>/dev/null
 }
