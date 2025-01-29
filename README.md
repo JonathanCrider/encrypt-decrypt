@@ -6,8 +6,6 @@ The tool enables you to encrypt and decrypt files from the command line using op
 
 ## Future Improvements
 
-This script was written on MacOS running zsh, so you may need to modify the code to run in your specific environment.
-
 In the future, I plan to
 
 - Add compatibility support for other shells (e.g., Bash) by dynamically detecting shells in `install.sh` and `uninstall.sh`
@@ -15,6 +13,8 @@ In the future, I plan to
 - Unit tests
 
 ## Installation
+
+⚠️ **NOTE:** This script was written on MacOS running zsh, so you may need to modify the code to run in your specific environment.
 
 Run the following command in your terminal to install the functions and create sourcing in your `.zshrc` file:
 
@@ -48,8 +48,8 @@ Once the code is saved and available (you may need to refresh or open a new term
 
 They both take 2 arguments:
 
-  1. path to original file name
-  2. path to target file name
+  1. **Input File Path:** The full path (or relative path) to the original input file you want to encrypt or decrypt.
+  2. **Output File Path:** The full path (or relative path) to where the resulting encrypted or decrypted file should be saved.
 
 ### Examples
 
