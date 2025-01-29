@@ -1,8 +1,18 @@
-# Encrypt and Decrypt tool for command line
+# Lightweight CLI Tool for Encryption and Decryption
 
-Adds a quick, simple way to encrypt and decrypt a file using openssl aes-256-cbc with PBKDFT and a salt. Relatively secure way to share a sensitive file with a password, so long as you follow password and other security best practices.
+This project began as a simple way to encrypt sensitive files while experimenting with shell scripting. It combines my interest in security with the need for efficiency in everyday tasks.
 
-Do note, this was written on MacOS running zsh, so you may need to modify the code to run in your specific environment
+The tool enables you to encrypt and decrypt files from the command line using openssl with AES-256-CBC encryption, PBKDF2 key derivation, and a salt for added security. It's designed as a secure but lightweight solution for sharing sensitive files—just be sure to follow password and security best practices! (I make no promises or guarantees)
+
+## Future Improvements
+
+This script was written on MacOS running zsh, so you may need to modify the code to run in your specific environment.
+
+In the future, I plan to
+
+- Add compatibility support for other shells (e.g., Bash) by dynamically detecting shells in `install.sh` and `uninstall.sh`
+- Enhance error handling for edge cases like missing dependencies (openssl, curl) or invalid arguments
+- Unit tests
 
 ## Installation
 
