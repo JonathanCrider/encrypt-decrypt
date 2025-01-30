@@ -77,6 +77,6 @@ Run the following command to uninstall the script:
 curl -sSL https://raw.githubusercontent.com/JonathanCrider/encrypt-decrypt/main/uninstall.sh | zsh
 ```
 
-## Submit a pull request
+## 🤝 Contributing
 
 If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
